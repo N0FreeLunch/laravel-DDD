@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SomethingController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test/uri/something', function () {
+  return 'You are at the path : /uri/something';
+});
+
+Route::get('/uri/something', [SomethingController::class, 'something']);
+
+Route::get('/upload', [UploadController::class, 'upload']) -> name('upload');
+
+Route::post('/process', [UploadController::class, 'process']) -> name('process');
+
+Route::get('/list', [UploadController::class, 'list']) -> name('list');
