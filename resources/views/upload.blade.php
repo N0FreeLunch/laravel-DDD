@@ -1,7 +1,7 @@
 
 <body>
   <h1>uplaod a file</h1>
-  <form class="" id="uploadForm" name="uploadForm" action="{{route('upload')}}" method="post" enctype="multipart/form-data">
+  <form class="" id="uploadForm" name="uploadForm" action="{{route('upload')}}" enctype="multipart/form-data">
     @csrf
     <label for="fileName">File Name:</label>
     <input type="text" name="filesName" id="fileName" value="" required />
