@@ -1,13 +1,13 @@
 
 <body>
   <h1>uplaod a file</h1>
-  <form class="" id="uploadForm" name="uploadForm" action="{{route('upload')}}" enctype="multipart/form-data">
+  <form id="uploadForm" name="uploadForm" action="{{route('upload')}}" enctype="multipart/form-data">
     @csrf
     <label for="fileName">File Name:</label>
-    <input type="text" name="filesName" id="fileName" value="" required />
+    <input type="text" name="fileName" id="fileName" required />
     <br />
     <label for="userFile">Select a File</label>
-    <input type="file" name="fileName" id="fileName" value="" required />
+    <input type="file" name="userFile" id="userFile" required />
     <button type="submit" name="submit">Submit</button>
   </form>
 
@@ -21,8 +21,8 @@
       var url = form.attr('action');
       $.ajax({
         url : url,
-        type, "POST",
-        data : new FromData(this),
+        type : "POST",
+        data : new FormData(this),
         processData : false,
         contentType : false,
         dataType : "JSON",

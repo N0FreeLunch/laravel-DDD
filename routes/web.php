@@ -27,6 +27,7 @@ Route::get('/test/uri/something', function () {
 Route::get('/uri/something', [SomethingController::class, 'something']);
 
 Route::get('/upload', [UploadController::class, 'upload']) -> name('upload');
+Route::post('/upload', [UploadController::class, 'store']) -> name('upload');
 
 Route::post('/process', [UploadController::class, 'process']) -> name('process');
 

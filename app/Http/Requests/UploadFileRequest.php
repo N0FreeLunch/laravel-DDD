@@ -13,7 +13,7 @@ class UploadFileRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class UploadFileRequest extends FormRequest
     public function rules()
     {
         return [
-            'fileName' => 'require|string',
+            'fileName' => 'required|string',
             'userFile' => 'required|file'
         ];
     }
